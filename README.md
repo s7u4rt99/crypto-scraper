@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Firstly, to scrape the past week of data, run:
+
+```
+yarn seed
+```
+
+To run the development server:
 
 ```bash
 npm run dev
