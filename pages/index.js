@@ -17,11 +17,7 @@ export default function Home() {
     control,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      // numberOfVouchers: "",
-      // voucherValue: "",
-      // selectedCharity: "",
-    },
+    defaultValues: {},
   });
   const coinsList = ["ETH/USD", "SUSHI/USD", "BTC/USD"];
   const maxDate = new Date();
@@ -29,7 +25,6 @@ export default function Home() {
   const [result, setResult] = useState([]);
 
   const onSubmit = (data) => {
-    // setSubmitted(true)
     setTimeout(5000);
     const chosenCoins = [];
     for (const key in data) {
@@ -91,6 +86,7 @@ export default function Home() {
             name="startDate"
             key="startDate"
             control={control}
+            style={{ marginBottom: "3vh" }}
             render={({ field }) => (
               <>
                 <LocalizationProvider dateAdapter={AdapterMoment}>
@@ -102,7 +98,6 @@ export default function Home() {
                     label="Start Date"
                     minDate={minDate}
                     maxDate={maxDate}
-                    style={{ marginBottom: "3vh" }}
                     renderInput={(params) => <TextField {...params} />}
                   />
                 </LocalizationProvider>
