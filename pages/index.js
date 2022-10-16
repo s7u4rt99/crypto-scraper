@@ -102,6 +102,7 @@ export default function Home() {
                     label="Start Date"
                     minDate={minDate}
                     maxDate={maxDate}
+                    style={{ marginBottom: "3vh" }}
                     renderInput={(params) => <TextField {...params} />}
                   />
                 </LocalizationProvider>
@@ -122,6 +123,7 @@ export default function Home() {
                     label="End Date"
                     minDate={minDate}
                     maxDate={maxDate}
+                    style={{ marginBottom: "3vh" }}
                     renderInput={(params) => <TextField {...params} />}
                   />
                 </LocalizationProvider>
@@ -134,6 +136,7 @@ export default function Home() {
           variant="contained"
           fullWidth
           type="submit"
+          style={{ marginBottom: "3vh" }}
         >
           Search
         </Button>
