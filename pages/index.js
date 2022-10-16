@@ -10,8 +10,9 @@ import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import EnhancedTable from "../components/Table";
+import { server } from "../config";
 
-export default function Home() {
+export default function Home({ minDate, maxDate }) {
   const {
     handleSubmit,
     control,
@@ -20,8 +21,8 @@ export default function Home() {
     defaultValues: {},
   });
   const coinsList = ["ETH/USD", "SUSHI/USD", "BTC/USD"];
-  const maxDate = new Date();
-  const minDate = new Date(maxDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+  // const maxDate = new Date();
+  // const minDate = new Date(maxDate.getTime() - 7 * 24 * 60 * 60 * 1000);
   const [result, setResult] = useState([]);
 
   const onSubmit = (data) => {
@@ -138,4 +139,12 @@ export default function Home() {
       <EnhancedTable data={result} />
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const res = await fetch(`${server}/api/coins`);
+  const { minDate, maxDate } = await res.json();
+  console.log(minDate);
+  console.log(maxDate);
+  return { props: { minDate: minDate, maxDate: maxDate } };
 }

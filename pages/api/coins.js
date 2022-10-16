@@ -6,6 +6,24 @@ export default async function handler(req, res) {
     const httpMethod = req.method;
     if (httpMethod === "POST") {
       await handleFilter(req, res);
+    } else if (httpMethod === "GET") {
+      let minDateResult = await prisma.exchangeRates.findMany({
+        take: 1,
+        orderBy: {
+          date: "asc",
+        },
+      });
+
+      let maxDateResult = await prisma.exchangeRates.findMany({
+        take: 1,
+        orderBy: {
+          date: "desc",
+        },
+      });
+      res.status(200).json({
+        minDate: moment.utc(minDateResult[0].date).local().format(),
+        maxDate: moment.utc(maxDateResult[0].date).local().format(),
+      });
     } else {
       res.setHeader("Allow", ["GET"]);
       res.status(405).end(`Method ${httpMethod} Not Allowed`);
