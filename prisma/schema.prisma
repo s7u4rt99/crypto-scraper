@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Table to store the exchange rates
+model ExchangeRates {
+  id            Int    @id @default(autoincrement())
+  coin          String // represents the coins eg BTC/USD
+  date          DateTime // datetime of data collected
+  open          Float
+  high          Float 
+  low           Float
+  close         Float
+  volume        Float
+}
