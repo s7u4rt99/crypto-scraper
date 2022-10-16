@@ -86,9 +86,8 @@ export default function Home() {
             name="startDate"
             key="startDate"
             control={control}
-            style={{ marginBottom: "3vh" }}
             render={({ field }) => (
-              <>
+              <div style={{ marginBottom: "3vh" }}>
                 <LocalizationProvider dateAdapter={AdapterMoment}>
                   <DateTimePicker
                     className={styles.date}
@@ -101,7 +100,7 @@ export default function Home() {
                     renderInput={(params) => <TextField {...params} />}
                   />
                 </LocalizationProvider>
-              </>
+              </div>
             )}
           />
           <Controller
