@@ -153,5 +153,10 @@ export async function getServerSideProps(context) {
   const { minDate, maxDate } = await res.json();
   console.log(minDate);
   console.log(maxDate);
-  return { props: { minDate: minDate, maxDate: maxDate } };
+  return {
+    props: {
+      minDate: new Date(minDate).toString(),
+      maxDate: new Date(maxDate).toString(),
+    },
+  };
 }
