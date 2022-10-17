@@ -13,11 +13,11 @@ export const prisma =
       process.env.NODE_ENV === 'development' ? ['query', 'info', 'error', 'warn'] : ['error'],
   });
 
-prisma.$on('query', (e) => {
-  console.log('Query: ' + e.query)
-  console.log('Params: ' + e.params)
-  console.log('Duration: ' + e.duration + 'ms')
-})
+// prisma.$on('query', (e) => {
+//   console.log('Query: ' + e.query)
+//   console.log('Params: ' + e.params)
+//   console.log('Duration: ' + e.duration + 'ms')
+// })
 
 if (process.env.NODE_ENV !== 'production') {
   global.prisma = prisma;
