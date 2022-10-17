@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## About
+
+Take home assignment for Allium interview. Scraping code can be found in `/prisma/seed.js`. Schema can be found in `/prisma/schema.prisma`. Data fetching queries can be found in `/pages/api/coins.js`. `GET` retrieves min and max date for the date picker, `POST` creates a new search and returns the data for the search result. 
+
+
 ## Getting Started
 
 Firstly, to scrape the past week of data, run:
