@@ -21,8 +21,8 @@ export default async function handler(req, res) {
         },
       });
       res.status(200).json({
-        minDate: moment.utc(minDateResult[0].date).local().format(),
-        maxDate: moment.utc(maxDateResult[0].date).local().format(),
+        minDate: minDateResult[0].date,
+        maxDate: maxDateResult[0].date,
       });
     } else {
       res.setHeader("Allow", ["GET"]);
@@ -51,7 +51,7 @@ async function handleFilter(req, res) {
     return {
       id: x.id,
       coin: x.coin,
-      date: moment.utc(x.date).local().format(),
+      date: x.date,
       open: x.open,
       high: x.high,
       low: x.low,

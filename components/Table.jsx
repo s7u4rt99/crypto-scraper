@@ -253,7 +253,7 @@ function CoinRow(props) {
           {coin.id}
         </TableCell>
         <TableCell align="right">{coin.coin}</TableCell>
-        <TableCell align="right">{coin.date}</TableCell>
+        <TableCell align="right">{new Date(coin.date).toString()}</TableCell>
         <TableCell align="right">{coin.open}</TableCell>
         <TableCell align="right">{coin.high}</TableCell>
         <TableCell align="right">{coin.low}</TableCell>
