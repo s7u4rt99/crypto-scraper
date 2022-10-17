@@ -39,9 +39,9 @@ export default function Home({ minDate, maxDate }) {
 
     console.log(data.startDate.toDate().toUTCString());
 
-    console.log(data.endDate.toDate());
-
-    console.log(data.endDate.toDate().toUTCString());
+    // console.log(data.endDate.toDate());
+    // console.log(data.endDate);
+    // console.log(data.endDate.toDate().toUTCString());
 
     const body = JSON.stringify({
       coins: chosenCoins,
