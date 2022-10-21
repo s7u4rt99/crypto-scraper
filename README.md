@@ -7,7 +7,10 @@ Take home assignment for Allium interview. Scraping code can be found in `/prism
 
 ## Getting Started
 
-Firstly, to scrape the past week of data, run:
+Firstly, run `yarn` to install dependencies.
+
+
+Next, to scrape the past week of data, run:
 
 ```
 yarn seed
